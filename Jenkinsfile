@@ -35,7 +35,7 @@ pipeline {
         stage('deploy to tomcat') {
             steps {
                 sshagent(['tomcat-ssh-deploy']) {
-                sh 'scp -o StrictHostKeyChecking=no target/demo-v2.war ubuntu@3.145.100.132:/opt/tomcat/webapps'
+                sh 'scp -o StrictHostKeyChecking=no target/demo-v2.war ubuntu@3.145.100.132:/opt/tomcat/webapps' // change tomact IP
                 }   // ubuntu user have access to tomcat files. (i.e)chown ubuntu:ubuntu under tomcat directory.
             } 
         }
